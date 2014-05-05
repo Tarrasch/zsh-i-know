@@ -1,0 +1,3 @@
+_ik () {
+  reply=$(basename $PWD)
+}
