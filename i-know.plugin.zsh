@@ -1,11 +1,20 @@
 # I know what I'm doing function
 ik () {
-  (($#>0)) && {
-    [[ $1 != $(basename $PWD) ]] &&
-      echo "$0: Argument doesn't match PWD, refusing to continue" &&
+  if (($#>=2))
+  then
+    echo "$0: Too many arguments, refusing to continue"
+    return 1
+  elif (($#>=1))
+  then
+    if [[ $1 != $(basename $PWD) ]]
+    then
+      echo "$0: Argument doesn't match PWD, refusing to continue"
       return 1
-  }
-  echo "Are you sure you want to do this? (y/n)" && read -qs 
+    fi
+  else
+    echo "Are you sure you want to do this? (y/n)"
+    read -qs
+  fi
 }
 
 _ik () {
