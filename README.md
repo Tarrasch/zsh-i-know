@@ -14,7 +14,7 @@ If you say `n`. It'll return with a non-zero exit code. So just chain `ik` with
 
 Or for extra security
 
-    $ ik <current-dir> && rm -f important-file.txt && echo 'Yay! File deleted'
+    $ ik <current-dir> && ik && rm -f important-file.txt && echo 'Yay! File deleted'
     Are you sure you want to do this? (y/n)
     Yay! File deleted
 
